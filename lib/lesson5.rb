@@ -47,12 +47,12 @@ hash = { "abc" => 123, def: 456}
 # p hash["abc"]
 # p hash[:def]
 person = { name: "alice", age: 20, frends: ["bob", "carol"], phone: { home: "1234" } }
-p person[:name]
-p person[:frends]
-p person[:phone][:home]
-
-
-
-
+# p person[:name]
+# p person[:frends]
+# p person[:phone][:home]
+# p currencies.keys
+# p currencies.values
+# p currencies.has_key?(:japan)
+# p currencies.has_key?(:italy)
 
 
