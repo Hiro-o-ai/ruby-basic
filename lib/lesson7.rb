@@ -36,5 +36,28 @@ users << User.new('Bob', 'Python', 30)
 # p users[0].first_name
 alice = User.new('Alice', 'Ruby', 20)
 bob = User.new('Bob', 'Python', 30)
-p alice.full_name
-p bob.full_name
+# p alice.full_name
+# p bob.full_name
+# class User
+#   def initialize
+#     puts "initialized"
+#   end
+#   def hello
+#     "hello"
+#   end
+# end
+# # User.new
+# user = User.new
+# # user.initialize
+# p user.hello
+class User
+  def initialize(name)
+    @name = name
+  end
+
+  def hello
+    "hello, i am #{@name}"
+  end
+end
+user = User.new("alice")
+p user.hello
