@@ -111,15 +111,66 @@ class Product
     DEFAULT_PRICE
   end
 end
+# p Product.default_price
+# product = Product.new
+# # p product.price
+# p product.default_price
+class User
+  attr_accessor :name
+  def initialize(name)
+    @name = name
+  end
 
-p Product.default_price
-product = Product.new
-# p product.price
-p product.default_price
+  def hello
+    "hello, I am #{name}"
+  end
 
+  def hi
+    "Hi, I am #{self.name}"
+  end
 
+  def my_name
+    "My name is #{@name}"
+  end
+end
+user = User.new("Alice")
+# p user.hello
+# p user.hi
+# p user.my_name
+class Foo
+  # p "クラス構文の直下のself: #{self}"
 
+  def self.bar
+    p "クラスメソッドないのself: #{self}"
+  end
 
+  def baz
+    p "インスタンスメソッド内のself: #{self}"
+  end
+end
+# p Foo.bar
+# foo = Foo.new
+# p foo.baz
+class Product
+  attr_reader :name, :price
+
+  def initialize(name, price)
+    @name = name
+    @price = price
+  end
+
+  def self.format_price(price)
+    "#{price}円"
+  end
+
+  def to_s
+    # formatted_price = self.class.format_price(price)は同じ意味となる
+    formatted_price = Product.format_price(price)
+    "name: #{name}, price: #{formatted_price}"
+  end
+end
+product = Product.new("A great movie", 1000)
+# p product.to_s
 
 
 
