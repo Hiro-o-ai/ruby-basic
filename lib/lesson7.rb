@@ -51,13 +51,82 @@ bob = User.new('Bob', 'Python', 30)
 # # user.initialize
 # p user.hello
 class User
+# nameとname=(value)メソッドと同じ効果を持つ
+  attr_accessor :name, :age
+# 読み込み専用に変えたいときはattr_readerメソッドを使用
+# 書き込み専用にしたいときはattr_writerを使用する
   def initialize(name)
     @name = name
+    # @age = age
+  end
+
+# 外部から@nameを参照するためのメソッド
+  # def name
+  #   @name
+  # end
+
+# 外部から@nameを変更するためのメソッド
+  # def name=(value)
+  #   @name = value
+  # end
+
+  def self.create_users(names)
+    names.map do |name|
+      User.new(name)
+    end
   end
 
   def hello
+    # shuffled_name = @name.chars.shuffle.join
     "hello, i am #{@name}"
   end
 end
 user = User.new("alice")
-p user.hello
+# p user.hello
+alice = User.new('Alice')
+# p alice.hello
+bob = User.new('Bob')
+# p bob.hello
+names = ['Alice', 'Bob', 'Carol']
+users = User.create_users(names)
+users.each do |user|
+  p user.hello
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
