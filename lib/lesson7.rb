@@ -89,9 +89,34 @@ bob = User.new('Bob')
 # p bob.hello
 names = ['Alice', 'Bob', 'Carol']
 users = User.create_users(names)
-users.each do |user|
-  p user.hello
+# users.each do |user|
+#   # p user.hello
+# end
+class Product
+# 定数は必ず大文字でなくてはならない
+  DEFAULT_PRICE = 0
+
+  attr_reader :name, :price
+
+  # def initialize(name, price = DEFAULT_PRICE )
+  #   @name = name
+  #   @price = price
+  # end
+
+  def self.default_price
+    DEFAULT_PRICE
+  end
+
+  def default_price
+    DEFAULT_PRICE
+  end
 end
+
+p Product.default_price
+product = Product.new
+# p product.price
+p product.default_price
+
 
 
 
