@@ -180,47 +180,55 @@
 # p user.is_a?(Object)
 # p user.is_a?(BasicObject)
 # p user.is_a?(String)
-class Product
-  attr_reader :name, :price
+# class Product
+#   attr_reader :name, :price
 
-  def initialize(name, price)
-    @name = name
-    @price = price
-  end
+#   def initialize(name, price)
+#     @name = name
+#     @price = price
+#   end
 
-# Objectクラスのto_sメソッドをオーバーライド
-  def to_s
-    "name: #{name}, price: #{price}"
+# # Objectクラスのto_sメソッドをオーバーライド
+#   def to_s
+#     "name: #{name}, price: #{price}"
+#   end
+# end
+
+# class DVD < Product
+#   attr_reader :running_time
+
+#   def initialize(name, price, running_time)
+#     # @name = name
+#     # @price = price
+#     super(name, price)
+#     @running_time = running_time
+#   end
+
+#   # Productクラスのto_sメソッドをオーバーライド
+#   def to_s
+#     # "name: #{name}, price: #{price}, running_time: #{running_time}"
+#     "#{super}, running_time: #{running_time}"
+#   end
+# end
+# product = Product.new('A great movie', 1000)
+# # p product.name
+# # p product.price
+# p product.to_s
+# dvd = DVD.new("A great movie", 1000, 120)
+# # p dvd.name
+# # p dvd.price
+# # p dvd.running_time
+# p dvd.to_s
+class Foo
+  def self.hello
+    "hello"
   end
 end
 
-class DVD < Product
-  attr_reader :running_time
-
-  def initialize(name, price, running_time)
-    # @name = name
-    # @price = price
-    super(name, price)
-    @running_time = running_time
-  end
-
-  # Productクラスのto_sメソッドをオーバーライド
-  def to_s
-    # "name: #{name}, price: #{price}, running_time: #{running_time}"
-    "#{super}, running_time: #{running_time}"
-  end
+class Bar < Foo
 end
-product = Product.new('A great movie', 1000)
-# p product.name
-# p product.price
-p product.to_s
-
-dvd = DVD.new("A great movie", 1000, 120)
-# p dvd.name
-# p dvd.price
-# p dvd.running_time
-p dvd.to_s
-
+p Foo.hello
+p Bar.hello
 
 
 
