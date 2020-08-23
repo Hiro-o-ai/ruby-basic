@@ -219,22 +219,109 @@
 # # p dvd.price
 # # p dvd.running_time
 # p dvd.to_s
-class Foo
-  def self.hello
-    "hello"
-  end
+# class Foo
+#   def self.hello
+#     "hello"
+#   end
+# end
+
+# class Bar < Foo
+# endm
+# p Foo.hello
+# p Bar.hello
+# class User
+# # デフォルトではpublicメソッドとなる
+#   def hello
+#     #{self.name}ではエラーが発生する
+#     "hello, #{name}"
+#   end
+
+#   private
+
+#   # privateメソッド
+#   def name
+#     "Hel"
+#   end
+# end
+
+# class Product
+#   private
+#   def name
+#     'A great movie'
+#   end
+# end
+
+# class DVD < Product
+#   def to_s
+#     "name:#{name}"
+#   end
+# end
+
+# dvd = DVD.new
+# p dvd.to_s
+
+# class User
+#   attr_reader :name
+
+#   def initialize(name, weight)
+#     @name = name
+#     @weight = weight
+#   end
+
+#   def heavier_than?(other_user)
+#     other_user.weight < @weight
+#   end
+
+#   protected
+
+#   def weight
+#     @weight
+#   end
+# end
+
+# alice = User.new('alice', 50)
+# bob = User.new('bob', 70)
+
+# p alice.heavier_than?(bob)
+# p bob.heavier_than?(alice)
+# p alice.weight
+
+# class Parent
+#   def initialize
+#     @first = 1
+#     @second = 2
+#   end
+
+#   def number
+#     "#{@first}:#{@second}"
+#   end
+# end
+
+# class Child < Parent
+#   def initialize
+#     super
+#     @hour = 6
+#     @minute = 30
+#     @second = 59
+#   end
+
+#   def time
+#     "#{@hour}:#{@minute}:#{@second}"
+#   end
+# end
+
+# parent = Parent.new
+# p parent.number
+
+# child = Child.new
+# p child.time
+# p child.number
+
+class Product
+  DEFAULT_PRICE = 0
 end
 
-class Bar < Foo
-end
-p Foo.hello
-p Bar.hello
-
-
-
-
-
-
+p Product::DEFAULT_PRICE
 
 
 
