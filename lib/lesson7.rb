@@ -317,17 +317,88 @@
 # p child.time
 # p child.number
 
-class Product
-  DEFAULT_PRICE = 0
+# class Product
+#   DEFAULT_PRICE = 0
+#   DEFAULT_PRICE = 100
+#   # private_constant :DEFAULT_PRICE
+# end
+
+# p Product::DEFAULT_PRICE
+
+# class Product
+#   NAME = 'A product'
+#   SOME_NAMES = ['foo', 'bar', 'baz'].freeze
+#   SOME_PRICES = {'foo' => 10, 'bar' => 20, 'baz' => 30}
+# end
+# Product::NAME.upcase!
+# p Product::NAME
+# Product::SOME_NAMES << 'hoge'
+# p Product::SOME_NAMES
+
+# class Product
+#   # クラスインスタンス変数
+#   @name = "Product"
+
+#   def self.name
+#     # クラスインスタンス変数
+#     @name
+#   end
+
+#   def initialize(name)
+#     # インスタンス変数
+#     @name = name
+#   end
+
+#   def name
+#     # インスタンス変数
+#     @name
+#   end
+# end
+# # p Product.name
+# # product = Product.new('good')
+# # p product.name
+# # p Product.name
+# class DVD < Product
+#   @name = 'DVD'
+
+#   def self.name
+#     @name
+#   end
+
+#   def upcase_name
+#     @name.upcase
+#   end
+# end
+
+# p Product.name
+# p DVD.name
+# p product = Product.new('A great movie')
+# p product.name
+# dvd = DVD.new('An awesome film')
+# p dvd.name
+# p dvd.upcase_name
+# p Product.name
+# p DVD.name
+
+$program_name = 'Awesome program'
+class Program
+  def initialize(name)
+    $program_name = name
+  end
+
+  def self.name
+    $program_name
+  end
+
+  def name
+    $program_name
+  end
 end
-
-p Product::DEFAULT_PRICE
-
-
-
-
-
-
+p Program.name
+program = Program.new('super')
+p program.name
+p Program.name
+p $program_name
 
 
 
