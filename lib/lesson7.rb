@@ -380,27 +380,39 @@
 # p Product.name
 # p DVD.name
 
-$program_name = 'Awesome program'
-class Program
-  def initialize(name)
-    $program_name = name
-  end
+# $program_name = 'Awesome program'
+# class Program
+#   def initialize(name)
+#     $program_name = name
+#   end
 
-  def self.name
-    $program_name
-  end
+#   def self.name
+#     $program_name
+#   end
 
-  def name
-    $program_name
-  end
-end
-p Program.name
-program = Program.new('super')
-p program.name
-p Program.name
-p $program_name
+#   def name
+#     $program_name
+#   end
+# end
+# p Program.name
+# program = Program.new('super')
+# p program.name
+# p Program.name
+# p $program_name
 
+# class MyString < String
+# end
+# s = MyString.new('hello')
+# p s
+# p s.class
 
+# class MyArray < Array
+# end
+# a = MyArray.new()
+# a << 1
+# a << 2
+# p a
+# p a.class
 
 
 
