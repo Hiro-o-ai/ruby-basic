@@ -414,6 +414,163 @@
 # p a
 # p a.class
 
+# 独自メソッドの追加
+# class String
+#   def shuffle
+#     chars.shuffle.join
+#   end
+# end
+# s = 'Hello, I am Alice'
+# p s.shuffle
+# p s.shuffle
+
+# 既存のメソッドの上書き
+# class User
+#   def initialize(name)
+#     @name = name
+#   end
+
+#   def hello
+#     "Hello, #{@name}"
+#   end
+# end
+# p user = User.new('Alice')
+# p user.hello
+# class User
+#   def hello
+#     "#{@name}さん、こんにちは"
+#   end
+# end
+# p user.hello
+
+# 特定オブジェクトへのメソッド追記
+# alice = 'I am Alice'
+# bob = 'I am Bob'
+# def alice.shuffle
+#   chars.shuffle.join
+# end
+# p alice.shuffle
+# p bob.shuffle   エラー
+
+# 特異メソッドによる定義
+# alice  = 'I am Alice'
+# class << alice
+#   def shuffle
+#     chars.shuffle.join
+#   end
+# end
+# p alice.shuffle
+
+# 特異メソッドとクラスメソッド
+# クラスメソッド
+# class User
+#   def self.hello
+#     'hello'
+#   end
+
+#   class << self
+#     def hi
+#       'Hi'
+#     end
+#   end
+# end
+# 特異メソッド
+# alice =  'I am alice'
+# def alice.hello
+#   'hello'
+# end
+
+# class << alice
+#   def hi
+#     'Hi'
+#   end
+# end
+
+# class User
+# end
+# クラス構文の外部にクラスメソッドを定義
+# def User.hello
+#   'hello'
+# end
+# クラス構文の外部にクラスメソッドを定義
+# class << User
+#   def hi
+#     'hi'
+#   end
+# end
+
+# ダックタイピング
+def display_name(object)
+  puts "Name is <<#{object.name}>>"
+end
+class User
+  def name
+    'alice'
+  end
+end
+class Product
+  def name
+    'A great movie'
+  end
+end
+user = User.new
+product = Product.new
+p display_name(user)
+p display_name(product)
+
+メソッドを持っているかの確認
+p user.respond_to?(:name) true
+p user.respond_to?(:hi)   false
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
