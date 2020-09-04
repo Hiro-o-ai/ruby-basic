@@ -500,27 +500,27 @@
 # end
 
 # ダックタイピング
-def display_name(object)
-  puts "Name is <<#{object.name}>>"
-end
-class User
-  def name
-    'alice'
-  end
-end
-class Product
-  def name
-    'A great movie'
-  end
-end
-user = User.new
-product = Product.new
-p display_name(user)
-p display_name(product)
+# def display_name(object)
+#   puts "Name is <<#{object.name}>>"
+# end
+# class User
+#   def name
+#     'alice'
+#   end
+# end
+# class Product
+#   def name
+#     'A great movie'
+#   end
+# end
+# user = User.new
+# product = Product.new
+# p display_name(user)
+# p display_name(product)
 
-メソッドを持っているかの確認
-p user.respond_to?(:name) true
-p user.respond_to?(:hi)   false
+# メソッドを持っているかの確認
+# p user.respond_to?(:name) true
+# p user.respond_to?(:hi)   false
 
 
 
