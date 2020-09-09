@@ -89,14 +89,34 @@
 # repeat_proc = Proc.new { |text| text * 2 }
 # greeting(&repeat_proc)
 
+# Procオブジェクトを実行する他の方法
+# p add_proc = Proc.new { |a, b| a + b }
+# p add_proc.call(10, 20)
+# p add_proc.yield(10, 20)
+# p add_proc.(10, 20)
+# p add_proc[10, 20]
+# p add_proc === [10, 20]
 
+# def judge(age)
+#   adult = Proc.new { |n| n > 20 }
+#   child = Proc.new { |n| n < 20 }
+#   case age
+#   when adult
+#     '大人です'
+#   when child
+#     '子供です'
+#   else
+#     '二十歳です'
+#   end
+# end
+# p judge(25)
+# p judge(18)
+# p judge(20)
 
-
-
-
-
-
-
+# reverse_proc = Proc.new { |s| s.reverse }
+# p ['Ruby', 'Java', 'Perl'].map(&reverse_proc)
+# other_proc = reverse_proc.to_proc
+# p reverse_proc.equal?(other_proc)
 
 
 
