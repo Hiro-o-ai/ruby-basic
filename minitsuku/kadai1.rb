@@ -52,6 +52,7 @@
 # end
 
 # class Library
+# 初期化のinitialize
 #   def initialize
 #     @library = []
 #   end
