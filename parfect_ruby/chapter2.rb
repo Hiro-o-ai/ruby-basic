@@ -30,10 +30,21 @@
 #   end
 # end
 # ruler = Ruler.new
+# attr_accessorでlengthがメソッドとして使える
+# これはdef length=(val)
+#         @length = val
+#     end
+# に等しい
+# @がつくインスタンス変数にオブジェクトの状態を保持できる
 # ruler.length = 30
 # ruler.display_length
 
-
+# Proc
+# greeter = Proc.new { |name|
+#   puts "hello #{name}!"
+# }
+# greeter.call 'Ruby' or ('Ruby')
+# callに渡した引数がブロックの仮引数に代入
 
 
 
