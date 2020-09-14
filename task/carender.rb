@@ -15,25 +15,23 @@ start = yobi[ index_today - diff]
 data_last = Date.new(data.year, data.month, -1)
 array = (1..data_last.day).to_a
 week = []
-p yobi.index(start)
+# p yobi.index(start)
 unless start == 'Su'
   yobi.index(start).times {
     week << '  '
   }
 end
 array.each do |d|
-  week << d.to_s
+  if d < 10
+    week << ' '  + d.to_s
+  else
+    week << d.to_s
+  end
 end
-week1 = []
-p times = week.length / 7
-p week.length
-
-
 
 p "   #{month1[data.month]} #{data.year}"
-p yobi.join(' ')
-
-
-week = []
-array1 = (0..6).to_a
-
+p yobi.join(' ').to_s
+week1 = week.each_slice(7).to_a
+week1.each do |a|
+  puts a.join(' ')
+end
