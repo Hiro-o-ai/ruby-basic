@@ -32,8 +32,12 @@ input.each do |maze_y|
   y += 1
 end
 
-puts $start
+# スタートからゴールまでの距離
+x = ($goal[1] - $start[1]).abs
+y = ($goal[2] - $start[2]).abs
+all_cost = x + y
 
+puts all_cost
 
 
 
