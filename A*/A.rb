@@ -114,17 +114,25 @@ File.open( "入力.txt", mode = "rt" ) {|f|
 nodes = {}
 maze.each.with_index do |line, y|
   line.each.with_index do |data, x|
+    # "*"の場合は以下の処理を実行しない
     next if data == '*'
+    # \wでアルファベット、数字、アンダーバー
+    # $&はmatchした文字列が入る
     id = data.match(/\w/) ? $& : "#{y}_#{x}"
     edges =
       [[-1, 0], [1, 0], [0, -1], [0, 1]].inject([]) do |mem, (_y, _x)|
+        # dataの位置から上下左右の位置に変更する
         _x += x; _y += y
+        # 上下左右の位置の文字列で場合わけ
         case maze[_y][_x]
         when /\w/ then mem << $&
+        # \sは垂直ダブ以外の全ての空白文字
         when /\s/ then mem << "#{_y}_#{_x}"
+        # "*"の時は全てこれ
         else mem
         end
       end.map { |nid| [1, nid] }
+      # あるdataの位置をキーにその上下左右の" "や"S"、"G"がある場合のみedgesの配列のデータが増える
     nodes[id] = edges
   end
 end
@@ -148,4 +156,3 @@ g = Graph.new(nodes)
 #   end
 #   print "\n"
 # end
-
