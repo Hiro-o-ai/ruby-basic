@@ -73,6 +73,8 @@ class Graph
     # gid="G"
     base = @nodes.find { |node| node.id == gid }
     res = [base]
+    # node_id == base.fromが一致し続けるまでwhileが続く
+    # whileはGからSまでの間続く
     while base = @nodes.find { |node| node.id == base.from }
       res << base
     end
@@ -80,6 +82,7 @@ class Graph
   end
 
   private
+  # やっていることはstartのcostを0にしてから全範囲の空白文字列の場所に行くまでのcostを算出し、代入している。
   def dijkstra(sid)
     # sid="S"
     @nodes.each do |node|
@@ -171,10 +174,10 @@ g = Graph.new(nodes)
 # end
 
 route = g.route('S', 'G')
-# maze.each_with_index do |line, y|
-#   line.each_with_index do |data, x|
-#     # findで最短経路と一致するかを確認、した場合は数値を返す→ture、しない場合はnil→falseとなる。そして三項演算子の条件となり、$かそれ以外が出力
-#     print route.find { |pos| pos.id == "#{y}_#{x}" } ? '$' : data
-#   end
-#   print "\n"
-# end
+maze.each_with_index do |line, y|
+  line.each_with_index do |data, x|
+    # findで最短経路と一致するかを確認、した場合は数値を返す→ture、しない場合はnil→falseとなる。そして三項演算子の条件となり、$かそれ以外が出力
+    print route.find { |pos| pos.id == "#{y}_#{x}" } ? '$' : data
+  end
+  print "\n"
+end
